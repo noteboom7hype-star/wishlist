@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Wishlist TRH: Chapter 1</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    button {
+      background: #ff4b2b;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 40px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #ff416c;
+    }
+
+    h2 {
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Wishlist TRH: Chapter 1</h1>
+  <button onclick="carregar()">Steam</button>
+
+  <script>
+    function carregar() {
+      document.body.innerHTML = "<h2>Loading...</h2>";
+      setTimeout(() => {
+        document.body.innerHTML = "<h2>Obg por botar TRH na wishlist.<br>Detectei a Steam e vai aparecer na sua biblioteca em setembro</h2>";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
