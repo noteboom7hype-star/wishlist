@@ -39,13 +39,50 @@
       background: #ff416c;
     }
 
+    .spinner {
+      border: 6px solid rgba(255,255,255,0.3);
+      border-top: 6px solid #fff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    .checkmark {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #28a745;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto;
+    }
+
+    .checkmark:after {
+      content: "✔";
+      color: #fff;
+      font-size: 40px;
+    }
+
     h2 {
       animation: fadeIn 1.5s ease;
+    }
+
+    p {
+      margin-top: 20px;
+      font-style: italic;
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
@@ -55,9 +92,15 @@
 
   <script>
     function carregar() {
-      document.body.innerHTML = "<h2>Loading...</h2>";
+      document.body.innerHTML = "<h2>Loading...</h2><div class='spinner'></div>";
       setTimeout(() => {
-        document.body.innerHTML = "<h2>Obg por botar TRH na wishlist.<br>Detectei a Steam e vai aparecer na sua biblioteca em setembro</h2>";
+        document.body.innerHTML = `
+          <div class="checkmark"></div>
+          <h2>Obrigado por colocar TRH na sua wishlist Steam.<br>
+          Detextei o processo steam.exe e assim então,<br>
+          Aparecerá na sua biblioteca Steam! Obrigado.</h2>
+          <p>Atenciosamente<br>- Note</p>
+        `;
       }, 2000);
     }
   </script>
